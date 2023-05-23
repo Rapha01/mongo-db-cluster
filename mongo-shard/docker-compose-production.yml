@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  mongo-shard:
+    container_name: mongo-shard-rs${SHARD_RS_INDEX:?err}-${SHARD_INDEX:?err}
+    image: mongo
+    command: mongod --shardsvr --replSet shard-rs${SHARD_RS_INDEX:?err} --port 27017
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data

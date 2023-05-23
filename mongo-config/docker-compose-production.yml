@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  mongo-config:
+    container_name: mongo-config-rs-${CONFIG_INDEX:?err}
+    image: mongo
+    command: mongod --keyFile /keys/keyFile.key --configsvr --replSet config-rs --dbpath /data --port 27017
+    volumes:
+      - ./data:/data
+      - ./keys:/keys
+    ports:
+      - "27017:27017"

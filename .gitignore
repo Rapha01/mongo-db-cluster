@@ -1,0 +1,6 @@
+mongo-config/keys/keyFile.key
+mongo-config/data
+mongo-router/keyFile.yaml
+mongo-shard/keyFile.yaml
+mongo-shard/data
+/src/const/keys.js
